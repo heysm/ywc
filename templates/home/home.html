@@ -368,10 +368,26 @@
           <div class="col s12 m3">
             <img
               class="materialboxed responsive-img"
-              ssrc="https://scontent-bom1-2.xx.fbcdn.net/v/t1.0-9/118400064_187344666103966_1285589826063145152_o.jpg?_nc_cat=109&_nc_sid=730e14&_nc_ohc=2Lecz6iTBtgAX_uHelY&_nc_oc=AQlYi5v1uGxQ8cD4j2bVZJuCgi-PHbyH7iFWy7cuSR2a19XjNGXgjOTDC_rW17XVDsc&_nc_ht=scontent-bom1-2.xx&oh=70938cef45964e63346e1ee2f5e991a1&oe=5FB2A7D7"
+              src="https://scontent-bom1-2.xx.fbcdn.net/v/t1.0-9/118400064_187344666103966_1285589826063145152_o.jpg?_nc_cat=109&_nc_sid=730e14&_nc_ohc=2Lecz6iTBtgAX_uHelY&_nc_oc=AQlYi5v1uGxQ8cD4j2bVZJuCgi-PHbyH7iFWy7cuSR2a19XjNGXgjOTDC_rW17XVDsc&_nc_ht=scontent-bom1-2.xx&oh=70938cef45964e63346e1ee2f5e991a1&oe=5FB2A7D7"
               alt=""
             />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          {% for i in gallery %}
+          <div class="col s12 m3">
+            <img
+              class="materialboxed responsive-img"
+              src="{{ i.image_url}}"
+              alt="{{ i.caption }}"
+            />
+          </div>
+          {% endfor %}
         </div>
       </div>
     </section>
