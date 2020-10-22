@@ -1,1 +1,41 @@
-Feed page
+{% load static %}
+
+<head>
+  <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <link rel="stylesheet" href="{% static 'home/feed.css' %}" />
+</head>
+
+<div class="container">
+  <h1>Feed page</h1>
+  {% for i in posts %}
+
+  <div class="box">
+    <div class="info">
+      <h3>Created By</h3>
+      <h4>{{i.artist }}</h4>
+    </div>
+
+    <div class="content">
+      {% if i.image_url %}
+      <img src="{{i.image_url}}" alt="{{i.caption}}" />
+      {% else %}
+      <iframe
+        width="560"
+        height="315"
+        src="{{i.video_url}}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      {% endif %}
+    </div>
+
+    <div class="caption">
+      <p>{{i.caption}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
