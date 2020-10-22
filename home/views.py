@@ -6,3 +6,8 @@ from .models import Gallery
 def home(request):
     gallery = Gallery.objects.all()
     return render(request, 'home/home.html', {"gallery": gallery})
+
+
+def feed(request):
+
+    return render(request, "home/feed.html")
