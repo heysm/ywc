@@ -21,7 +21,7 @@
   padding: 1em;
   margin: 1em;
   max-width: 70vw;
-  max-height: 90vh;
+  /* min-height: 90vh; */
   border-radius: 1em;
   box-shadow: 10px 10px 8px 10px #888888;
 }
