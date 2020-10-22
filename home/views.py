@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Gallery
+from .models import Gallery, Posts
 # Create your views here.
 
 
@@ -9,5 +9,5 @@ def home(request):
 
 
 def feed(request):
-
-    return render(request, "home/feed.html")
+    posts = Posts.objects.order_by('-date')
+    return render(request, "home/feed.html", {'posts': posts})
